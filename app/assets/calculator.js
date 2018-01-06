@@ -1,10 +1,7 @@
-/* JavaScript Document */
-
 (function(){
 
-	var app = angular.module('myCalculator', []); // declare app to be the name myCalculator
+	var app = angular.module('myCalculator', []);
 
-	//$scope allows us to pass variables between html and javascript
 	app.controller('CalculatorController', ['$scope', function($scope){
 
 		$scope.lumen_options = [375, 600, 900, 1125, 1600];
@@ -12,8 +9,6 @@
 		$scope.current_cost = 12;
 		$scope.current_hours = 3;
 		$scope.total_days = 365;
-
-
 		$scope.inc_conversion = .0625;
 		$scope.hal_conversion = .0450;
 		$scope.cfl_conversion = .0146;
@@ -36,14 +31,10 @@
 			$scope.hal_cost = ((($scope.hal_wattage * total_hours) / 1000) * cost).toFixed(2);
 			$scope.cfl_cost = ((($scope.cfl_wattage * total_hours) / 1000) * cost).toFixed(2);
 			$scope.led_cost = ((($scope.led_wattage * total_hours) / 1000) * cost).toFixed(2);
-
-
 		}
 
 		$scope.calculate();
 
-
 	}]);
-
-
+	
 })();
